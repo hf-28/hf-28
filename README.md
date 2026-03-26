@@ -17,8 +17,5 @@ Hi there! I'm **Huthefa Alfararjeh**, a passionate iOS developer with over 6 yea
 - **Architectures:** MVVM,
 - **Tools:** Xcode, Git, Fastlane, XCTest
 
-## 📊 GitHub Stats
-![Huthefa's GitHub Stats](https://github-readme-stats.vercel.app/api?username=hf-28&show_icons=true&theme=radical)
-
 ## 📫 Let's Connect
 - 💼 LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/hfararjeh/)
