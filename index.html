@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Huthayfah Alfararjeh — Articles</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #0d0a1a;
+    color: #e2e8f0;
+    min-height: 100vh;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #0d0a1a 0%, #150f2e 50%, #0d0a1a 100%);
+    padding: 64px 24px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(139,92,246,0.2) 0%, transparent 70%);
+  }
+
+  .hero h1 {
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    position: relative;
+    background: linear-gradient(135deg, #fff 30%, #c4b5fd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+  }
+  .hero p {
+    color: #94a3b8;
+    font-size: 15px;
+    position: relative;
+    max-width: 460px;
+    margin: 0 auto 24px;
+  }
+
+  .btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background .2s, transform .15s;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-linkedin {
+    background: rgba(139,92,246,0.2);
+    border: 1px solid rgba(139,92,246,0.5);
+    color: #c4b5fd;
+  }
+  .btn-linkedin:hover { background: rgba(139,92,246,0.35); }
+  .btn-email {
+    background: rgba(139,92,246,0.2);
+    border: 1px solid rgba(139,92,246,0.5);
+    color: #c4b5fd;
+  }
+  .btn-email:hover { background: rgba(139,92,246,0.35); }
+
+  .list-wrap {
+    max-width: 680px;
+    margin: 36px auto;
+    padding: 0 24px 60px;
+  }
+
+  ul { list-style: none; }
+  li {
+    padding: 11px 0;
+    border-bottom: 1px solid #1a1330;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  a {
+    color: #c4b5fd;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color .15s;
+  }
+  a:hover { color: #ddd6fe; text-decoration: underline; }
+
+  .tag {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 0;
+    border-radius: 10px;
+    white-space: nowrap;
+    width: 90px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .arch   { background: rgba(139,92,246,.18); color: #a78bfa; }
+  .agile  { background: rgba(16,185,129,.15);  color: #34d399; }
+  .mobile { background: rgba(245,158,11,.15);  color: #fbbf24; }
+  .perf   { background: rgba(239,68,68,.15);   color: #f87171; }
+  .career { background: rgba(236,72,153,.15);  color: #f472b6; }
+  .other  { background: rgba(148,163,184,.1);  color: #94a3b8; }
+
+  /* Toast */
+  #toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: #1e1535;
+    border: 1px solid rgba(139,92,246,0.4);
+    color: #c4b5fd;
+    padding: 10px 22px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity .3s, transform .3s;
+    pointer-events: none;
+    z-index: 999;
+  }
+
+  footer {
+    text-align: center;
+    padding: 0 20px 40px;
+    color: #2d2050;
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Huthayfah Alfararjeh</h1>
+  <p>Software engineering perspectives on architecture, agility, mobile, and beyond.</p>
+  <div class="btn-row">
+    <button class="btn btn-linkedin" onclick="window.open('https://www.linkedin.com/in/alfararjeh/','_blank')">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="#a78bfa"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      Huthayfah Alfararjeh
+    </button>
+    <button class="btn btn-email" onclick="copyEmail()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      hfararjeh28@gmail.com
+    </button>
+  </div>
+</div>
+
+<div class="list-wrap">
+  <ul>
+    <li><span class="tag arch">Architecture</span><a href="https://www.linkedin.com/pulse/one-philosophy-many-names-onion-hexagonal-clean-ddd-alfararjeh-5riof/" target="_blank">One Philosophy, Many Names</a></li>
+    <li><span class="tag arch">Architecture</span><a href="https://www.linkedin.com/pulse/usa-unit-test-board-uk-huthayfah-alfararjeh-d7hve/" target="_blank">USA Unit Test Board</a></li>
+    <li><span class="tag arch">Architecture</span><a href="https://www.linkedin.com/pulse/zero-crash-police-huthayfah-alfararjeh-9lb1e/" target="_blank">Zero Crash Police</a></li>
+    <li><span class="tag arch">Architecture</span><a href="https://www.linkedin.com/pulse/prefer-bad-practices-over-user-experiences-huthayfah-alfararjeh-cabre/" target="_blank">Prefer Bad Practices Over UX</a></li>
+    <li><span class="tag arch">Architecture</span><a href="https://www.linkedin.com/pulse/enough-upfront-design-huthayfah-alfararjeh-mtqoe/" target="_blank">Enough Upfront Design</a></li>
+    <li><span class="tag arch">Architecture</span><a href="https://www.linkedin.com/pulse/why-real-microservices-dont-exist-mobile-apps-yet-alfararjeh-f9z6e/" target="_blank">Why Real Microservices Don't Exist Yet</a></li>
+    <li><span class="tag arch">Architecture</span><a href="https://www.linkedin.com/pulse/when-all-you-have-openclose-principle-every-problem-looks-alfararjeh-9bpue/" target="_blank">Open/Close Principle Pitfall</a></li>
+    <li><span class="tag arch">Architecture</span><a href="https://www.linkedin.com/pulse/architecture-design-no-zero-trust-huthayfah-alfararjeh-ax1be/" target="_blank">Architecture & Zero Trust</a></li>
+    <li><span class="tag arch">Architecture</span><a href="https://www.linkedin.com/pulse/three-code-misconceptions-make-your-really-suck-huthayfah-alfararjeh-f5dze/" target="_blank">Three Code Misconceptions</a></li>
+    <li><span class="tag arch">Architecture</span><a href="https://www.linkedin.com/pulse/trade-offs-extremes-vs-balance-cdd-huthayfah-alfararjeh-yvbxe/" target="_blank">Trade-offs: Extremes vs Balance</a></li>
+    <li><span class="tag arch">Architecture</span><a href="https://www.linkedin.com/pulse/context-driven-deployment-huthayfah-alfararjeh-rw2qe/" target="_blank">Context Driven Deployment</a></li>
+    <li><span class="tag arch">Architecture</span><a href="https://www.linkedin.com/pulse/composition-over-inheritance-huthayfah-alfararjeh-olqse/" target="_blank">Composition Over Inheritance</a></li>
+    <li><span class="tag agile">Agile</span><a href="https://www.linkedin.com/pulse/oracle-took-20-years-agile-huthayfah-alfararjeh-nnege/" target="_blank">Oracle Took 20 Years Agile</a></li>
+    <li><span class="tag agile">Agile</span><a href="https://www.linkedin.com/pulse/definition-lie-done-huthayfah-alfararjeh-9ix9f/" target="_blank">Definition of "Lie Done"</a></li>
+    <li><span class="tag agile">Agile</span><a href="https://www.linkedin.com/pulse/line-had-been-agile-50-billion-would-have-saved-huthayfah-alfararjeh-2q4we/" target="_blank">If Line Had Been Agile</a></li>
+    <li><span class="tag mobile">Mobile</span><a href="https://www.linkedin.com/pulse/truth-kotlin-multiplatform-kmm-huthayfah-alfararjeh-t2she/" target="_blank">Truth About Kotlin Multiplatform</a></li>
+    <li><span class="tag mobile">Mobile</span><a href="https://www.linkedin.com/pulse/waterloo-flutter-vs-native-empires-huthayfah-alfararjeh-5407c/" target="_blank">Waterloo: Flutter vs Native</a></li>
+    <li><span class="tag mobile">Mobile</span><a href="https://www.linkedin.com/pulse/ios-android-rise-new-os-huthayfah-alfararjeh-rywqe/" target="_blank">iOS & Android: Rise of New OS</a></li>
+    <li><span class="tag perf">Performance</span><a href="https://www.linkedin.com/pulse/nano-performance-optimization-huthayfah-alfararjeh-bjydf/" target="_blank">Nano Performance Optimization</a></li>
+    <li><span class="tag career">Career</span><a href="https://www.linkedin.com/pulse/startup-lesson-from-uber-tacking-system-huthayfah-alfararjeh-e7bme/" target="_blank">Startup Lesson from Uber Tracking</a></li>
+    <li><span class="tag career">Career</span><a href="https://www.linkedin.com/pulse/become-software-engineer-2026-back-core-dont-follow-trend-alfararjeh-h4flf/" target="_blank">Become Software Engineer 2026</a></li>
+    <li><span class="tag career">Career</span><a href="https://www.linkedin.com/pulse/10-flags-bad-software-company-from-first-second-smart-alfararjeh-hyspe/" target="_blank">10 Flags of Bad Software Companies</a></li>
+    <li><span class="tag career">Career</span><a href="https://www.linkedin.com/pulse/adapt-fast-fall-behind-10-rules-survive-unstable-world-alfararjeh-jimke/" target="_blank">Adapt Fast or Fall Behind</a></li>
+    <li><span class="tag career">Career</span><a href="https://www.linkedin.com/pulse/against-nature-startup-crash-huthayfah-alfararjeh-o5ffe/" target="_blank">Against Nature: Startup Crash</a></li>
+    <li><span class="tag career">Career</span><a href="https://www.linkedin.com/pulse/dont-naive-huzaifa-alfararjeh-qxeyc/" target="_blank">Don't Be Naive</a></li>
+    <li><span class="tag other">Other</span><a href="https://www.linkedin.com/pulse/myth-overnight-revolution-tech-science-huthayfah-alfararjeh-euzse/" target="_blank">Myth of Overnight Tech Revolution</a></li>
+    <li><span class="tag other">Other</span><a href="https://www.linkedin.com/pulse/unstable-computer-science-huthayfah-alfararjeh-d51bc/" target="_blank">Unstable Computer Science</a></li>
+  </ul>
+</div>
+
+<div id="toast">✅ Email copied!</div>
+
+<footer>Huthayfah Alfararjeh — LinkedIn Articles</footer>
+
+<script>
+  function copyEmail() {
+    navigator.clipboard.writeText('hfararjeh28@gmail.com').then(() => {
+      const t = document.getElementById('toast');
+      t.style.opacity = '1';
+      t.style.transform = 'translateX(-50%) translateY(0)';
+      setTimeout(() => {
+        t.style.opacity = '0';
+        t.style.transform = 'translateX(-50%) translateY(20px)';
+      }, 2500);
+    });
+  }
+</script>
+
+</body>
+</html>
