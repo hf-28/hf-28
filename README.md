@@ -8,6 +8,9 @@ Hi there! I'm **Huthefa Alfararjeh**, a passionate iOS developer with over 6 yea
 - 💡 Expertise in iOS, Swift, SwiftUI, UIKit, Design Patterns, TCA, and all things iOS development
 - 🎥 Content creator dedicated to teaching and inspiring others to excel in iOS development
 
+## 📝 Articles
+[[View Articles](https://hf-28.github.io/blogs/)
+
 ## 🛠️ Technologies & Tools
 - **Languages:** Swift
 - **Frameworks:** SwiftUI, UIKit, Combine
